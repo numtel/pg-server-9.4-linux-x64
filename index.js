@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
-var childProcess = require('child_process');
+var spawnSync = require('spawn-sync');
+var spawn = require('child_process').spawn;
 var extend = require('extend');
 
 var defaultConfig = {
@@ -20,7 +21,7 @@ module.exports = function(dataDir, config) {
     var dataDirStat = fs.statSync(dataDir);
   } catch(err) {
     // Data directory does not exist
-    var initResult = childProcess.spawnSync(
+    var initResult = spawnSync(
       path.join(__dirname, 'server/bin/initdb'),
       [ '-D', dataDir, '--pwfile=' + path.join(__dirname, 'defaultpw') ]);
   }
@@ -40,7 +41,7 @@ module.exports = function(dataDir, config) {
 
   fs.writeFileSync(path.join(dataDir, 'postgresql.conf'), conf);
 
-  var child = childProcess.spawn(
+  var child = spawn(
     path.join(__dirname, 'server/bin/postgres'), [ '-D', dataDir ]);
   
   return child
