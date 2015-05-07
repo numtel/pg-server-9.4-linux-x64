@@ -1,0 +1,6 @@
+*.swp
+node_modules
+server/binlog/mysql-bin.0*
+server/data/mysql/ib_logfile0
+server/data/mysql/ib_logfile1
+server/my.cnf

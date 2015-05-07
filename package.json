@@ -1,0 +1,33 @@
+{
+  "name": "pg-server-9.4-linux-x64",
+  "version": "9.4.1",
+  "description": "PostgreSQL Server 9.4 for Linux x86 64-bit",
+  "author": "Ben Green <ben@latenightsketches.com> (https://numtel.github.io)",
+  "license": "PostgreSQL",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "keywords": [
+    "postgresql",
+    "server",
+    "binary",
+    "pg"
+  ],
+  "repository": "https://github.com/numtel/pg-server-9.4-linux-x64.git",
+  "scripts": {
+    "test": "PORT=12345 DATADIR=dbtest nodeunit test/index.js"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "extend": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  }
+}
