@@ -1,6 +1,6 @@
 {
   "name": "pg-server-9.4-linux-x64",
-  "version": "9.4.1001",
+  "version": "9.4.4",
   "description": "PostgreSQL Server 9.4 for Linux x86 64-bit",
   "author": "Ben Green <ben@latenightsketches.com> (https://numtel.github.io)",
   "license": "PostgreSQL",

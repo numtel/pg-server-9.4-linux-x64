@@ -36,14 +36,14 @@ all:
 .SECONDARY:
 
 # PostgreSQL version number
-VERSION = 9.4.1
+VERSION = 9.4.4
 MAJORVERSION = 9.4
 
 # Support for VPATH builds
 # (PGXS VPATH support is handled separately in pgxs.mk)
 ifndef PGXS
 vpath_build = no
-abs_top_srcdir = /mnt/hgfs/pginstaller.auto/server/source/postgres.linux-x64
+abs_top_srcdir = /mnt/hgfs/pginstaller.pune/server/source/postgres.linux-x64
 
 ifneq ($(vpath_build),yes)
 top_srcdir = $(top_builddir)
@@ -58,7 +58,7 @@ endif # not PGXS
 vpathsearch = `for f in $(addsuffix /$(1),$(subst :, ,. $(VPATH))); do test -r $$f && echo $$f && break; done`
 
 # Saved arguments from configure
-configure_args =  '--with-libs=/opt/local/Current/lib' '--with-includes=/opt/local/Current/include/libxml2:/opt/local/Current/include' '--prefix=/mnt/hgfs/pginstaller.auto/server/staging/linux-x64' '--with-ldap' '--with-openssl' '--with-perl' '--with-python' '--with-tcl' '--with-tclconfig=/opt/EnterpriseDB/LanguagePack/9.4/Tcl-8.5/lib' '--with-pam' '--enable-thread-safety' '--with-libxml' '--with-ossp-uuid' '--docdir=/mnt/hgfs/pginstaller.auto/server/staging/linux-x64/doc/postgresql' '--with-libxslt' '--with-libedit-preferred' '--with-gssapi' 'LD_LIBRARY_PATH=/opt/local/Current/lib'
+configure_args =  '--with-libs=/opt/local/Current/lib' '--with-includes=/opt/local/Current/include/libxml2:/opt/local/Current/include' '--prefix=/mnt/hgfs/pginstaller.pune/server/staging/linux-x64' '--with-ldap' '--with-openssl' '--with-perl' '--with-python' '--with-tcl' '--with-tclconfig=/opt/EnterpriseDB/LanguagePack/9.4/Tcl-8.5/lib' '--with-pam' '--enable-thread-safety' '--with-libxml' '--with-ossp-uuid' '--docdir=/mnt/hgfs/pginstaller.pune/server/staging/linux-x64/doc/postgresql' '--with-libxslt' '--with-libedit-preferred' '--with-gssapi' 'LD_LIBRARY_PATH=/opt/local/Current/lib'
 
 
 ##########################################################################
@@ -78,7 +78,7 @@ ifndef PGXS
 # Note that prefix, exec_prefix, and datarootdir aren't defined in a PGXS build;
 # makefiles may only use the derived variables such as bindir.
 
-prefix := /mnt/hgfs/pginstaller.auto/server/staging/linux-x64
+prefix := /mnt/hgfs/pginstaller.pune/server/staging/linux-x64
 exec_prefix := ${prefix}
 datarootdir := ${prefix}/share
 
@@ -118,7 +118,7 @@ endif
 
 mandir := ${datarootdir}/man
 
-docdir := /mnt/hgfs/pginstaller.auto/server/staging/linux-x64/doc/postgresql
+docdir := /mnt/hgfs/pginstaller.pune/server/staging/linux-x64/doc/postgresql
 ifeq "$(findstring pgsql, $(docdir))" ""
 ifeq "$(findstring postgres, $(docdir))" ""
 override docdir := $(docdir)/postgresql
